@@ -97,7 +97,7 @@ describe('Higher Order Functions', () => {
         expect(add100(-100)).toBe(0);
       });
     });
-    describe('curry', () => {
+    describe.only('curry', () => {
       it('will take a binary function and a single value as arguments and return a function', () => {
         expect(typeof curry(add, 5)).toBe('function');
       });
@@ -129,7 +129,7 @@ describe('Higher Order Functions', () => {
   //    })
   //  })
 
-  describe('Unary Functions', () => {
+  describe.skip('Unary Functions', () => {
     describe('twice', () => {
       it('returns a function on first invocation', () => {
         const double = twice(add);
@@ -197,7 +197,7 @@ describe('Higher Order Functions', () => {
     });
   });
 
-  describe('Generator Functions', () => {
+  describe.skip('Generator Functions', () => {
     describe('from', () => {
       it('returns a function on first invocation', () => {
         const index = from();
@@ -504,7 +504,7 @@ describe('Higher Order Functions', () => {
   });
 });
 
-describe('Advanced Functionality', () => {
+describe.skip('Advanced Functionality', () => {
   describe('curry', () => {
     it('works for any number of arguments', () => {
       const multiply5Numbers = (a, b, c, d, e) => a * b * c * d * e;

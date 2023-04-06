@@ -1,16 +1,36 @@
-function identity() {}
+function identity(arg) {
+  return arg;
+};
 
-function identityF() {}
+function identityF(arg) {
+  function identity() {
+    return arg;
+  }
+  return identity;
+};
 
-function add() {}
+function add(num1, num2) {
+  return num1 + num2;
+}
 
-function subtract() {}
+function subtract(num1, num2) {
+  return num1 - num2;
+}
 
-function multiply() {}
+function multiply(num1, num2) {
+  return num1 * num2
+}
 
-function increment() {}
+function increment(num) {
+  return add(num, 1);
+}
 
-function addF() {}
+function addF(num1) {
+  function add(num2) {
+    return num1 + num2;
+  };
+  return add;
+}
 
 function curry() {}
 
