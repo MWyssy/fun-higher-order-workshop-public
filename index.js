@@ -32,9 +32,22 @@ function addF(num1) {
   return add;
 }
 
-function curry() {}
+function curry(func, num) {
+  function ourFunc(num2) {
+    return func(num, num2)
+  }
+return ourFunc
+}
 
-function liftF() {}
+function liftF(func) {
+  function ourFunc(num1) {
+    function ourFunc2(num2) {
+      return func(num1, num2)
+    }
+      return ourFunc2
+  }
+  return ourFunc
+}
 
 function twice() {}
 
