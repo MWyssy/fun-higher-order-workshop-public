@@ -103,6 +103,7 @@ function to(func, limit) {
 function fromTo(num1, num2) {
   const start = num1
   function increment() {
+    // console.log("hello")
     if (--num2 >= start) {
       return num1++
     }    
@@ -111,16 +112,12 @@ function fromTo(num1, num2) {
 }
 
 function element(arr, func) {
-  const start = func()
-  let end = 1
-  while (func() != undefined) {
-    func()
-    end++
-  }  
+  const lastHope = from(0)
   function increment() {
-    for (let i = start; i < end; i++) {
-      return arr[i]
+    if (func === undefined) {
+      return arr[lastHope()]
     }
+      return arr[func()]
   }    
   return increment
 }
