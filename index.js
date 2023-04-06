@@ -49,13 +49,39 @@ function liftF(func) {
   return ourFunc
 }
 
-function twice() {}
+function twice(func) {
+  return function (num) {
+    return func(num, num)
+  };
+};
 
-function composeU() {}
+function composeU(func1, func2) {
+  function ourFunc1(num1) {
+    const num2 = func1(num1, num1)
+    function ourFunc2(num2) {
+      return func2(num2);
+    };
+    return ourFunc2(num2)
+  };
+  return ourFunc1
+};
 
-function composeB() {}
+function composeB(func1, func2) {
+  function ourFunc1(num1, num2, num3) {
+    const num4 = func1(num1, num2)
+    return func2(num3, num4)
+  };
+  return ourFunc1;
+};
 
-function limit() {}
+function limit(func, limit) {
+  function ourFunc(num1, num2) {
+    if (--limit >= 0) {
+      return func(num1, num2)
+    };  
+  };
+  return ourFunc;
+};
 
 function from() {}
 

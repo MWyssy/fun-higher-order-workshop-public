@@ -129,7 +129,7 @@ describe('Higher Order Functions', () => {
   //    })
   //  })
 
-  describe.skip('Unary Functions', () => {
+  describe('Unary Functions', () => {
     describe('twice', () => {
       it('returns a function on first invocation', () => {
         const double = twice(add);
