@@ -83,22 +83,9 @@ function limit(func, limit) {
   return ourFunc;
 };
 
-function from(num) {
-      function increment() {
-      return num++
-    }    
-    return increment
-}
+function from() {}
 
-function to(func, limit) {
-  const start = func()
-  function increment() {
-      if (--limit >= start) {
-      return func()-1
-    }
-  }
-  return increment
-}
+function to() {}
 
 function fromTo(num1, num2) {
   const start = num1
