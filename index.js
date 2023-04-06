@@ -103,7 +103,6 @@ function to(func, limit) {
 function fromTo(num1, num2) {
   const start = num1
   function increment() {
-    // console.log("hello")
     if (--num2 >= start) {
       return num1++
     }    
