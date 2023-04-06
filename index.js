@@ -83,13 +83,47 @@ function limit(func, limit) {
   return ourFunc;
 };
 
-function from() {}
+function from(num) {
+      function increment() {
+      return num++
+    }    
+    return increment
+}
 
-function to() {}
+function to(func, limit) {
+  const start = func()
+  function increment() {
+      if (--limit >= start) {
+      return func()-1
+    }
+  }
+  return increment
+}
 
-function fromTo() {}
+function fromTo(num1, num2) {
+  const start = num1
+  function increment() {
+    if (--num2 >= start) {
+      return num1++
+    }    
+  }    
+  return increment
+}
 
-function element() {}
+function element(arr, func) {
+  const start = func()
+  let end = 1
+  while (func() != undefined) {
+    func()
+    end++
+  }  
+  function increment() {
+    for (let i = start; i < end; i++) {
+      return arr[i]
+    }
+  }    
+  return increment
+}
 
 function collect() {}
 

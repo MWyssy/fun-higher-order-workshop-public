@@ -197,7 +197,7 @@ describe('Higher Order Functions', () => {
     });
   });
 
-  describe.skip('Generator Functions', () => {
+  describe('Generator Functions', () => {
     describe('from', () => {
       it('returns a function on first invocation', () => {
         const index = from();
@@ -265,7 +265,7 @@ describe('Higher Order Functions', () => {
         expect(index()).toBe(undefined);
       });
     });
-    describe('element', () => {
+    describe.only('element', () => {
       it('on first invocation will return a function', () => {
         const ele = element([], fromTo(0, 1));
         expect(typeof ele).toBe('function');

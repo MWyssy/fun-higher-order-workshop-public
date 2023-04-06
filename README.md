@@ -124,7 +124,7 @@ add_ltd(3, 5); // undefined
 13. Write a `from` function that produces a generator that will produce a series of consecutive numerical values starting from the argument passed.
 
 ```js
-const index = from(0);
+const index = from(0)
 index(); // 0
 index(); // 1
 index(); // 2
