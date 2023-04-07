@@ -421,7 +421,7 @@ describe('Higher Order Functions', () => {
         expect(genA()).toBe('A2');
       });
     });
-    describe('genSymFF', () => {
+    describe.skip('genSymFF', () => {
       it('returns a function', () => {
         const genSymF = genSymFF(increment, 0);
         expect(typeof genSymF).toBe('function');

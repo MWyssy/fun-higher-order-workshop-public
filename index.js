@@ -178,7 +178,13 @@ function fibonacciF(num1, num2) {
   return generate
 }
 
-function genSymF() {}
+function genSymF(symbol) {
+  let num = 0;
+  function generateSymbol() {
+    return `${symbol}${num++}`
+  }
+  return generateSymbol;
+}
 
 function genSymFF() {}
 
