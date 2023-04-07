@@ -212,7 +212,19 @@ function counter(num) {
   return result;
 }
 
-function revokable() {}
+function revokable(func) {
+  const result = {};
+  let toggleFunc = func;
+  result.invoke = function invoke(num1, num2) {
+    if(toggleFunc === undefined) return toggleFunc 
+    return toggleFunc(num1, num2)
+  };
+  result.revoke = function revoke() {
+    toggleFunc = undefined;
+    return toggleFunc;
+  };
+  return result;
+}
 
 module.exports = {
   identity,
