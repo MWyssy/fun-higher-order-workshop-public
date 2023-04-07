@@ -421,7 +421,7 @@ describe('Higher Order Functions', () => {
         expect(genA()).toBe('A2');
       });
     });
-    describe.only('genSymFF', () => {
+    describe('genSymFF', () => {
       it('returns a function', () => {
         const genSymF = genSymFF(increment, 0);
         expect(typeof genSymF).toBe('function');
@@ -442,7 +442,7 @@ describe('Higher Order Functions', () => {
   });
 
   describe('Object Methods', () => {
-    describe('counter', () => {
+    describe.only('counter', () => {
       it('returns an object', () => {
         const obj = counter(10);
         expect(typeof obj).toBe('object');
@@ -461,7 +461,7 @@ describe('Higher Order Functions', () => {
         expect(obj).toHaveProperty('down');
         expect(typeof obj.down).toBe('function');
       });
-      it('down method will return an decreased count', () => {
+      it('down method will return a decreased count', () => {
         const obj = counter(10);
         expect(obj.down()).toBe(9);
       });

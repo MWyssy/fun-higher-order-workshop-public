@@ -163,7 +163,7 @@ function fibonacciF(num1, num2) {
   let count = 0;
   function generate() {
     const result = currentNum + nextNum;
-    if (count === 0) {
+    if (count ===0) {
       count++;
       return num1;
     }  
@@ -197,7 +197,20 @@ function genSymFF() {
   return genSymF;  
 }
 
-function counter() {}
+function counter(num) {
+  const result = {}
+  let number = num
+  result.up = function up() {
+    number++;
+    return number
+  }
+  result.down = function down() {
+    number--;
+    return number
+  }
+
+  return result;
+}
 
 function revokable() {}
 
