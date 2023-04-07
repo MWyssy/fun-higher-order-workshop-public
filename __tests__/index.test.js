@@ -341,7 +341,7 @@ describe('Higher Order Functions', () => {
         expect(fil()).toBe(undefined);
       });
     });
-    describe.only('concat', () => {
+    describe('concat', () => {
       it('returns a function', () => {
         const con = concat(fromTo(0, 3), fromTo(0, 2));
         expect(typeof con).toBe('function');
@@ -399,7 +399,7 @@ describe('Higher Order Functions', () => {
     });
   });
 
-  describe('gensym Functions', () => {
+  describe.only('gensym Functions', () => {
     describe('genSymF', () => {
       it('returns a function on first invocation', () => {
         expect(typeof genSymF('A')).toBe('function');

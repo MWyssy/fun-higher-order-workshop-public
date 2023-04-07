@@ -157,7 +157,26 @@ function concat(gen1, gen2) {
   return run;
 }
 
-function fibonacciF() {}
+function fibonacciF(num1, num2) {
+  let currentNum = num1;
+  let nextNum = num2;
+  let count = 0;
+  function generate() {
+    const result = currentNum + nextNum;
+    if (count === 0) {
+      count++;
+      return num1;
+    }  
+    if (count === 1) {
+      count++;
+      return num2;
+    }
+    currentNum = nextNum;
+    nextNum = result;
+    return result;
+}
+  return generate
+}
 
 function genSymF() {}
 
