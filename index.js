@@ -186,7 +186,16 @@ function genSymF(symbol) {
   return generateSymbol;
 }
 
-function genSymFF() {}
+function genSymFF() {
+  function genSymF(symbol) {
+    let num = 0;
+    function generateSymbol() {
+      return `${symbol}${num++}`
+    }
+    return generateSymbol;
+  }
+  return genSymF;  
+}
 
 function counter() {}
 
