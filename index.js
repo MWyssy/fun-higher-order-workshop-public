@@ -121,7 +121,16 @@ function element(arr, func) {
   return increment
 }
 
-function collect() {}
+function collect(func, arr) {
+  function runFunc() {
+    const itemToCollect = func();
+    arr.push(itemToCollect);
+    return itemToCollect;
+  }
+  if (func === undefined) return runFunc;
+  
+  return runFunc;
+};
 
 function filter() {}
 
