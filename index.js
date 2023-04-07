@@ -145,7 +145,17 @@ function filter(func, predicate) {
   return filteredIncrement
 }
 
-function concat() {}
+function concat(gen1, gen2) {
+  function run() {
+    const run1 = gen1();
+    if (run1 === undefined && gen2 !== undefined) {
+      return gen2();
+    } else {
+      return run1;
+    }
+  }
+  return run;
+}
 
 function fibonacciF() {}
 
