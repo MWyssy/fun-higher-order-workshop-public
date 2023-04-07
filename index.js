@@ -132,7 +132,18 @@ function collect(func, arr) {
   return runFunc;
 };
 
-function filter() {}
+function filter(func, predicate) {
+  function filteredIncrement() {
+    const value = func();
+    if (predicate(value)) {
+      return value;
+    } else {
+      return;
+    };
+  };
+
+  return filteredIncrement
+}
 
 function concat() {}
 

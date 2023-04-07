@@ -284,7 +284,7 @@ describe('Higher Order Functions', () => {
         expect(ele()).toBe('The Giant');
       });
     });
-    describe.only('collect', () => {
+    describe('collect', () => {
       it('returns a function', () => {
         expect(typeof collect()).toBe('function');
       });
@@ -309,7 +309,7 @@ describe('Higher Order Functions', () => {
         expect(list).toEqual([0, 1, 2]);
       });
     });
-    describe('filter', () => {
+    describe.only('filter', () => {
       it('returns a function', () => {
         expect(typeof filter()).toBe('function');
       });
