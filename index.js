@@ -145,15 +145,17 @@ function filter(func, predicate) {
   return filteredIncrement
 }
 
-function concat(gen1, gen2) {
-  function run() {
-    const run1 = gen1();
-    if (run1 === undefined && gen2 !== undefined) {
-      return gen2();
-    } else {
-      return run1;
-    }
-  }
+function concat(...gen) {
+    function run() {
+      if (gen.length === 0) return;
+      const run1 = gen[0]();
+      if (run1 === undefined && gen[1] !== undefined) {
+        gen.shift();
+        return gen[0]();
+      } else {
+        return run1;
+      };
+    } ;
   return run;
 }
 

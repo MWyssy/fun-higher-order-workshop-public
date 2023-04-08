@@ -341,7 +341,7 @@ describe('Higher Order Functions', () => {
         expect(fil()).toBe(undefined);
       });
     });
-    describe('concat', () => {
+    describe.only('concat', () => {
       it('returns a function', () => {
         const con = concat(fromTo(0, 3), fromTo(0, 2));
         expect(typeof con).toBe('function');
@@ -475,7 +475,7 @@ describe('Higher Order Functions', () => {
         expect(Object.keys(counter(20))).toEqual(['up', 'down']);
       });
     });
-    describe.only('revoke', () => {
+    describe('revoke', () => {
       it('returns an object', () => {
         const obj = revokable(add);
         expect(typeof obj).toBe('object');
@@ -522,7 +522,7 @@ describe.skip('Advanced Functionality', () => {
       expect(doubleFourTimes(3)).toBe(double(double(double(double(3)))));
     });
   });
-  describe('concat', () => {
+  describe.only('concat', () => {
     it('returns undefined if no generators were passed', () => {
       const gen = concat();
       expect(gen()).toBe(undefined);
